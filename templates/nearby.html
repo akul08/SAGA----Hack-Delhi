@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+  <meta charset="utf-8" />
+  <title>Saga:Nearby Places</title>
+  <link rel="stylesheet" type="text/css" href="css/nearby.css">
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+</head>
+<body>
+
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand pname" href="#">Pro Name</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li class="active"><a href="/">Home</a></li>
+            <li><a href="/about">About</a></li>
+            
+            <li><a href="/signup">Sign Up</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+    <div class="jumbotron">
+    	<div class="container">
+    		<h1>Nearby Places</h1>
+        <a class="btn btn-primary btn-large" href="/Destination" style="float:right;">Go to Step3</a>
+    	</div>
+    </div>
+
+  <div class="container">
+  <h1 id="heading">The following are the nearby Hospitals,Car-repair,and Railway Station</h1>
+  <ul id="list">
+  <div class="row">
+
+    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+    <h2 style="padding:0 20px">NAME</h2>
+    <ul>
+    {% for place in places %}
+      <li>{{place['name']}}</li>
+    {% endfor %}
+    </ul>
+    </div>
+    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+    <h2 style="padding:0 20px">TYPES</h2>
+    <ul>
+    {% for place in places %}
+      <li>{{place['types'][0]}}</li>
+    {% endfor %}
+    </ul>
+    </div>
+  </ul>
+  </div>
+  </div>
+  </div>
+</body>
+</html>
